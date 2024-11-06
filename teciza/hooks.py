@@ -138,10 +138,8 @@ app_license = "mit"
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
+# 	"Employee Checkin": {
+# 		"validate": "teciza.crud_events.check_mac_address"
 # 	}
 # }
 

@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-04 18:06:21.483828",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employer_eid",
+  "payer_eid",
+  "payer_qid",
+  "column_break_obcb",
+  "payer_bank_short_name",
+  "payer_iban",
+  "sif_version"
+ ],
+ "fields": [
+  {
+   "fieldname": "employer_eid",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employer EID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payer_eid",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Payer EID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payer_qid",
+   "fieldtype": "Data",
+   "label": "Payer QID"
+  },
+  {
+   "fieldname": "payer_bank_short_name",
+   "fieldtype": "Data",
+   "label": "Payer Bank Short Name"
+  },
+  {
+   "fieldname": "column_break_obcb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payer_iban",
+   "fieldtype": "Data",
+   "label": "Payer IBAN"
+  },
+  {
+   "default": "1",
+   "fieldname": "sif_version",
+   "fieldtype": "Data",
+   "label": "SIF Version"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-11-04 18:12:35.134271",
+ "modified_by": "Administrator",
+ "module": "Teciza",
+ "name": "WPS Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
