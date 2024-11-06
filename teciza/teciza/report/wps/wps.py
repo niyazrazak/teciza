@@ -3,7 +3,6 @@
 
 import frappe
 from frappe import _
-# from frappe.utils import formatdate, nowdate, nowtime, getdate
 from frappe.utils import getdate
 from datetime import datetime
 
@@ -76,7 +75,7 @@ def get_record(filters):
 		food_allowance = frappe.db.get_value("Salary Detail", {"parent": row.get("name"), "salary_component":  ["like", f"%Food Allowance%"] }, "Sum(amount)") or 0
 		transportation_allowance = frappe.db.get_value("Salary Detail", {"parent": row.get("name"), "salary_component":  ["like", "%Transportation Allowance%"]}, "Sum(amount)") or 0
 		
-		remaining_balance = row.net_salary - (base + housing_allowance + food_allowance + transportation_allowance - row.total_deduction)
+		remaining_balance = row.net_salary - (base + housing_allowance + food_allowance + transportation_allowance)
 
 		data_to_append = {
 			"sno": idx,
@@ -96,10 +95,12 @@ def get_record(filters):
 		row.update(data_to_append)
 		if row.get("total_deduction"):
 			row["deduction_reason_code"] = 4
+		else:
+			row["deduction_reason_code"] = 0
 
 	today = datetime.today()
 	now = datetime.now()
-	salary_month = getdate(filters.from_date).strftime("%Y%M")
+	salary_month = getdate(filters.from_date).strftime("%Y%m")
 	headers = {
 		"sno": frappe.db.get_single_value('WPS Settings', 'employer_eid'),
 		"qid_no": today.strftime("%Y%m%d"),
